@@ -170,7 +170,7 @@ function Statement() {
               <Reveal key={p.name} className="group w-[78vw] shrink-0 snap-start md:w-[460px]">
                 <div className={`relative aspect-[4/5] overflow-hidden ${p.tone}`} data-cursor-hover>
                   <img src={p.img} alt={p.name} loading="lazy" className="img-hover h-full w-full object-cover" />
-                  <div className="absolute left-5 top-5 rounded-full border border-cream/30 bg-background/30 px-3 py-1 text-[10px] tracking-[0.2em] text-cream backdrop-blur">
+                  <div className="absolute left-5 top-5 rounded-full border border-cream/40 bg-black/30 px-3 py-1 text-[10px] tracking-[0.2em] text-cream backdrop-blur">
                     SIGNATURE
                   </div>
                 </div>
@@ -220,7 +220,7 @@ function Categories() {
               data-cursor-hover
             >
               <img src={c.img} alt={c.title} loading="lazy" className="img-hover h-full w-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
                 <p className="text-[11px] tracking-[0.3em] text-sand">— SHOP</p>
                 <h3 className="mt-2 font-display text-3xl md:text-5xl">{c.title}</h3>
@@ -346,7 +346,7 @@ function Campaign() {
           transition={{ duration: 1.4, ease: "easeInOut" }}
         />
       ))}
-      <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-background/50" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/40" />
       <div className="relative z-10 mx-auto flex h-full max-w-[1600px] flex-col justify-between px-6 py-12 md:px-10 md:py-16">
         <Reveal as="p" className="text-[11px] tracking-[0.3em] text-cream">CAMPAIGN — SS '26</Reveal>
         <div>
@@ -407,7 +407,7 @@ function Featured() {
                 <span className="absolute left-4 top-4 rounded-full bg-sand px-3 py-1 text-[11px] font-medium text-background">
                   {p.discount}
                 </span>
-                <div className="absolute inset-x-0 bottom-0 translate-y-full bg-background py-4 text-center text-[11px] tracking-[0.3em] text-cream transition-transform duration-300 group-hover:translate-y-0">
+                <div className="absolute inset-x-0 bottom-0 translate-y-full bg-background py-4 text-center text-[11px] tracking-[0.3em] text-foreground transition-transform duration-300 group-hover:translate-y-0">
                   ADD TO CART
                 </div>
               </div>
