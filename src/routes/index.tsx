@@ -7,6 +7,7 @@ import { Navbar } from "@/components/Navbar";
 import { CustomCursor } from "@/components/CustomCursor";
 import { Reveal, Stagger, itemVariants } from "@/components/Reveal";
 
+import heroImage from "@/assets/hero-image.jpg";
 import velvetCitrus from "@/assets/velvet-citrus.jpg";
 import earthNoir from "@/assets/earth-noir.jpg";
 import catSkincare from "@/assets/cat-skincare.jpg";
