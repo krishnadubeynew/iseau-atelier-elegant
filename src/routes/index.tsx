@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
@@ -509,5 +509,3 @@ function Footer() {
   );
 }
 
-// useState import shim (above used `useState` in Campaign)
-import { useState } from "react";
