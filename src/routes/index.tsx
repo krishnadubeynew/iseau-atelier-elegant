@@ -7,6 +7,7 @@ import { Navbar } from "@/components/Navbar";
 import { CustomCursor } from "@/components/CustomCursor";
 import { Reveal, Stagger, itemVariants } from "@/components/Reveal";
 
+import heroImage from "@/assets/hero-image.jpg";
 import velvetCitrus from "@/assets/velvet-citrus.jpg";
 import earthNoir from "@/assets/earth-noir.jpg";
 import catSkincare from "@/assets/cat-skincare.jpg";
@@ -62,36 +63,51 @@ function Home() {
 function Hero() {
   const pills = ["Paradis", "E-commerce", "Cosmetics", "Beauty"];
   return (
-    <section className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden border-b border-charcoal pb-10 pt-10">
-      <div className="mx-auto flex w-full max-w-[1600px] flex-1 flex-col justify-between px-6 md:px-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-wrap items-center justify-center gap-3 pt-4"
-        >
-          {pills.map((p, i) => (
-            <span key={p} className="flex items-center gap-3 font-display text-sm italic text-foreground/70">
-              {i > 0 && <span className="text-sand">·</span>}
-              {p}
-            </span>
-          ))}
-        </motion.div>
+    <section className="relative flex min-h-[100svh] flex-col overflow-hidden border-b border-charcoal">
+      <div className="mx-auto flex w-full max-w-[1600px] flex-1 flex-col md:flex-row md:items-center md:px-10">
+        {/* Left: Text */}
+        <div className="flex flex-1 flex-col justify-center px-6 pt-28 md:px-0 md:pr-16 md:pt-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-wrap items-center gap-3"
+          >
+            {pills.map((p, i) => (
+              <span key={p} className="flex items-center gap-3 font-display text-sm italic text-foreground/60">
+                {i > 0 && <span className="text-sand">·</span>}
+                {p}
+              </span>
+            ))}
+          </motion.div>
 
-        <div className="animate-hero-in flex flex-col items-center text-center">
-          <h1 className="font-display font-medium leading-[0.86] tracking-[-0.03em]">
-            <span className="block text-[19vw] md:text-[14vw]">L'OISEAU</span>
-            <span className="block -mt-2 text-[19vw] italic text-sand md:text-[14vw]">DÉ</span>
-          </h1>
+          <div className="animate-hero-in mt-8 md:mt-12">
+            <h1 className="font-display font-medium leading-[0.88] tracking-[-0.03em]">
+              <span className="block text-[16vw] md:text-[7.5vw]">L'OISEAU</span>
+              <span className="block -mt-1 text-[16vw] italic text-sand md:-mt-2 md:text-[7.5vw]">DÉ</span>
+            </h1>
+            <p className="mt-6 max-w-sm text-sm leading-relaxed text-foreground/60">
+              A modern atelier of cosmetics — composed slowly, lived with daily. Small-batch formulas for a deliberate beauty ritual.
+            </p>
+          </div>
+
+          <div className="mt-10 pb-10 text-[11px] tracking-[0.3em] text-foreground/40 md:mt-auto md:pb-16">
+            SCROLL TO EXPLORE
+          </div>
         </div>
 
-        <div className="text-center text-[11px] tracking-[0.3em] text-foreground/50">
-          SCROLL TO EXPLORE
+        {/* Right: Image */}
+        <div className="relative h-[50vh] w-full overflow-hidden md:h-[80vh] md:flex-1 md:rounded-lg md:shadow-2xl">
+          <img
+            src={heroImage}
+            alt="Luxury cosmetics editorial"
+            className="h-full w-full object-cover"
+          />
         </div>
       </div>
 
       {/* Marquee */}
-      <div className="mt-8 border-y border-charcoal py-5">
+      <div className="border-y border-charcoal py-5 md:mt-0">
         <div className="flex overflow-hidden">
           <div className="animate-marquee flex shrink-0 whitespace-nowrap font-display text-2xl md:text-3xl">
             {Array.from({ length: 12 }).map((_, i) => (
@@ -154,7 +170,7 @@ function Statement() {
               <Reveal key={p.name} className="group w-[78vw] shrink-0 snap-start md:w-[460px]">
                 <div className={`relative aspect-[4/5] overflow-hidden ${p.tone}`} data-cursor-hover>
                   <img src={p.img} alt={p.name} loading="lazy" className="img-hover h-full w-full object-cover" />
-                  <div className="absolute left-5 top-5 rounded-full border border-cream/30 bg-background/30 px-3 py-1 text-[10px] tracking-[0.2em] text-cream backdrop-blur">
+                  <div className="absolute left-5 top-5 rounded-full border border-cream/40 bg-black/30 px-3 py-1 text-[10px] tracking-[0.2em] text-cream backdrop-blur">
                     SIGNATURE
                   </div>
                 </div>
@@ -204,7 +220,7 @@ function Categories() {
               data-cursor-hover
             >
               <img src={c.img} alt={c.title} loading="lazy" className="img-hover h-full w-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
                 <p className="text-[11px] tracking-[0.3em] text-sand">— SHOP</p>
                 <h3 className="mt-2 font-display text-3xl md:text-5xl">{c.title}</h3>
@@ -330,7 +346,7 @@ function Campaign() {
           transition={{ duration: 1.4, ease: "easeInOut" }}
         />
       ))}
-      <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-background/50" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/40" />
       <div className="relative z-10 mx-auto flex h-full max-w-[1600px] flex-col justify-between px-6 py-12 md:px-10 md:py-16">
         <Reveal as="p" className="text-[11px] tracking-[0.3em] text-cream">CAMPAIGN — SS '26</Reveal>
         <div>
@@ -391,7 +407,7 @@ function Featured() {
                 <span className="absolute left-4 top-4 rounded-full bg-sand px-3 py-1 text-[11px] font-medium text-background">
                   {p.discount}
                 </span>
-                <div className="absolute inset-x-0 bottom-0 translate-y-full bg-background py-4 text-center text-[11px] tracking-[0.3em] text-cream transition-transform duration-300 group-hover:translate-y-0">
+                <div className="absolute inset-x-0 bottom-0 translate-y-full bg-background py-4 text-center text-[11px] tracking-[0.3em] text-foreground transition-transform duration-300 group-hover:translate-y-0">
                   ADD TO CART
                 </div>
               </div>
