@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import { CustomCursor } from "@/components/CustomCursor";
 import { Reveal, Stagger, itemVariants } from "@/components/Reveal";
 
