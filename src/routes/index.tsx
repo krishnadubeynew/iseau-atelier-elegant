@@ -65,50 +65,51 @@ function Hero() {
   const pills = ["Paradis", "E-commerce", "Cosmetics", "Beauty"];
   return (
     <section className="relative flex min-h-[100svh] flex-col overflow-hidden border-b border-charcoal">
-      <div className="mx-auto flex w-full max-w-[1600px] flex-1 flex-col md:flex-row md:items-center md:px-10">
-        {/* Left: Text */}
-        <div className="flex flex-1 flex-col justify-center px-6 pt-28 md:px-0 md:pr-16 md:pt-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-wrap items-center gap-3"
-          >
-            {pills.map((p, i) => (
-              <span key={p} className="flex items-center gap-3 font-display text-sm italic text-foreground/60">
-                {i > 0 && <span className="text-sand">·</span>}
-                {p}
-              </span>
-            ))}
-          </motion.div>
+      {/* Background image */}
+      <div className="absolute inset-0 -z-10">
+        <img
+          src={heroImage}
+          alt="Luxury cosmetics editorial"
+          className="h-full w-full object-cover"
+        />
+        {/* Readability overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
+      </div>
 
-          <div className="animate-hero-in mt-8 md:mt-12">
-            <h1 className="font-display font-medium leading-[0.88] tracking-[-0.03em]">
-              <span className="block text-[16vw] md:text-[7.5vw]">L'OISEAU</span>
-              <span className="block -mt-1 text-[16vw] italic text-sand md:-mt-2 md:text-[7.5vw]">DÉ</span>
-            </h1>
-            <p className="mt-6 max-w-sm text-sm leading-relaxed text-foreground/60">
-              A modern atelier of cosmetics — composed slowly, lived with daily. Small-batch formulas for a deliberate beauty ritual.
-            </p>
-          </div>
+      <div className="mx-auto flex w-full max-w-[1600px] flex-1 flex-col justify-center px-6 pt-28 md:px-10 md:pt-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-wrap items-center gap-3"
+        >
+          {pills.map((p, i) => (
+            <span key={p} className="flex items-center gap-3 font-display text-sm italic text-cream/70">
+              {i > 0 && <span className="text-sand">·</span>}
+              {p}
+            </span>
+          ))}
+        </motion.div>
 
-          <div className="mt-10 pb-10 text-[11px] tracking-[0.3em] text-foreground/40 md:mt-auto md:pb-16">
-            SCROLL TO EXPLORE
-          </div>
+        <div className="animate-hero-in mt-8 md:mt-12">
+          <h1 className="font-display font-medium leading-[0.88] tracking-[-0.03em] text-cream">
+            <span className="block text-[16vw] md:text-[11vw]">L'OISEAU</span>
+            <span className="block -mt-1 text-[16vw] italic text-sand md:-mt-2 md:text-[11vw]">DÉ</span>
+          </h1>
+          <p className="mt-6 max-w-md text-sm leading-relaxed text-cream/80 md:text-base">
+            A modern atelier of cosmetics — composed slowly, lived with daily.
+            Small-batch formulas for a deliberate beauty ritual.
+          </p>
         </div>
 
-        {/* Right: Image */}
-        <div className="relative h-[50vh] w-full overflow-hidden md:h-[80vh] md:flex-1 md:rounded-lg md:shadow-2xl">
-          <img
-            src={heroImage}
-            alt="Luxury cosmetics editorial"
-            className="h-full w-full object-cover"
-          />
+        <div className="mt-10 pb-10 text-[11px] tracking-[0.3em] text-cream/60 md:mt-24 md:pb-16">
+          SCROLL TO EXPLORE
         </div>
       </div>
 
       {/* Marquee */}
-      <div className="border-y border-charcoal py-5 md:mt-0">
+      <div className="relative border-y border-charcoal bg-background py-5">
         <div className="flex overflow-hidden">
           <div className="animate-marquee flex shrink-0 whitespace-nowrap font-display text-2xl md:text-3xl">
             {Array.from({ length: 12 }).map((_, i) => (
