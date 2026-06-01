@@ -400,24 +400,24 @@ function Featured() {
             <motion.div
               key={p.name}
               variants={itemVariants}
-              className="group flex flex-col bg-cream text-background"
+              className="group flex flex-col bg-cream text-foreground"
               data-cursor-hover
             >
               <div className="relative aspect-square overflow-hidden">
                 <img src={p.img} alt={p.name} loading="lazy" className="img-hover h-full w-full object-cover" />
-                <span className="absolute left-4 top-4 rounded-full bg-sand px-3 py-1 text-[11px] font-medium text-background">
+                <span className="absolute left-4 top-4 rounded-full bg-sand px-3 py-1 text-[11px] font-medium text-foreground">
                   {p.discount}
                 </span>
-                <div className="absolute inset-x-0 bottom-0 translate-y-full bg-background py-4 text-center text-[11px] tracking-[0.3em] text-foreground transition-transform duration-300 group-hover:translate-y-0">
+                <div className="absolute inset-x-0 bottom-0 translate-y-full bg-foreground py-4 text-center text-[11px] tracking-[0.3em] text-background transition-transform duration-300 group-hover:translate-y-0">
                   ADD TO CART
                 </div>
               </div>
               <div className="flex items-end justify-between p-5">
                 <div>
-                  <p className="text-[10px] tracking-[0.3em] opacity-60">FRAGRANCE</p>
-                  <h3 className="mt-1 font-display text-2xl">{p.name}</h3>
+                  <p className="text-[10px] tracking-[0.3em] text-foreground/60">FRAGRANCE</p>
+                  <h3 className="mt-1 font-display text-2xl text-foreground">{p.name}</h3>
                 </div>
-                <span className="text-base font-medium">{p.price}</span>
+                <span className="text-base font-medium text-foreground">{p.price}</span>
               </div>
             </motion.div>
           ))}
