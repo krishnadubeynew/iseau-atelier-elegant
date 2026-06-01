@@ -1,18 +1,29 @@
+import { Link } from "@tanstack/react-router";
 import { Search, ShoppingBag, User } from "lucide-react";
 
-const links = ["NEW IN", "SHOP ALL", "SKIN CARE", "COSMETICS", "FACE HEALTH"];
+const links = [
+  { label: "SHOP ALL", to: "/shop" as const },
+  { label: "ABOUT US", to: "/about" as const },
+  { label: "CONTACT US", to: "/contact" as const },
+];
 
 export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-charcoal bg-background/85 backdrop-blur-md">
       <nav className="mx-auto flex h-16 max-w-[1600px] items-center justify-between px-6 md:px-10">
-        <a href="#" className="font-display text-xl tracking-tight md:text-2xl">
+        <Link to="/" className="font-display text-xl tracking-tight md:text-2xl">
           L'OISEAU DÉ
-        </a>
+        </Link>
         <ul className="hidden items-center gap-9 text-[11px] tracking-[0.22em] lg:flex">
           {links.map((l) => (
-            <li key={l}>
-              <a href="#" className="opacity-80 transition-opacity hover:opacity-100">{l}</a>
+            <li key={l.label}>
+              <Link
+                to={l.to}
+                className="opacity-80 transition-opacity hover:opacity-100"
+                activeProps={{ className: "opacity-100 text-sand" }}
+              >
+                {l.label}
+              </Link>
             </li>
           ))}
         </ul>
