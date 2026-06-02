@@ -53,7 +53,7 @@ function Home() {
         <Mosaic />
         <Campaign />
         <Featured />
-        <Brands />
+        <Reviews />
       </main>
       <Footer />
     </div>
