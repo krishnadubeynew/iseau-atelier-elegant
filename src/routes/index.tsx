@@ -43,7 +43,7 @@ const tickerItem = "NEW IN ✦ 50% OFF ✦ DISCOUNT ✦ ★ ";
 
 function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
       <CustomCursor />
       <Navbar />
       <main className="pt-16">
