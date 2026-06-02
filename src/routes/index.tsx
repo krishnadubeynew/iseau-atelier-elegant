@@ -458,37 +458,49 @@ function Reviews() {
   ];
 
   return (
-    <section className="border-b border-charcoal bg-foreground py-28 md:py-36">
+    <section className="border-b border-charcoal/15 bg-background py-32 md:py-44">
       <div className="mx-auto max-w-[1600px] px-6 md:px-10">
-        <div className="mb-14 flex items-end justify-between">
-          <Reveal as="h2" className="font-display text-4xl tracking-tight text-background md:text-6xl">
-            What they <span className="italic text-sand">say</span>
-          </Reveal>
-          <Reveal delay={0.15} className="hidden text-[11px] tracking-[0.3em] text-background/50 md:block">
+        <div className="mb-20 flex flex-col gap-8 md:mb-28 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-2xl">
+            <Reveal as="p" className="mb-8 text-[11px] tracking-[0.3em] text-sand">
+              — ATELIER NO. 04
+            </Reveal>
+            <Reveal
+              as="h2"
+              delay={0.15}
+              className="font-display text-5xl leading-[1.02] tracking-tight text-foreground md:text-7xl"
+            >
+              What they <span className="italic text-sand">say</span>
+            </Reveal>
+          </div>
+          <Reveal
+            delay={0.3}
+            className="hidden text-[11px] tracking-[0.3em] text-foreground/40 md:block"
+          >
             04 — TESTIMONIALS
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-px bg-charcoal/15 md:grid-cols-2 lg:grid-cols-4">
           {reviews.map((r, idx) => (
             <Reveal
               key={r.name}
-              delay={idx * 0.12}
-              className="group flex flex-col border border-background/10 bg-background/5 p-8 backdrop-blur-sm transition-colors duration-500 hover:bg-background/10"
+              delay={0.2 + idx * 0.18}
+              className="group flex flex-col bg-background p-10 transition-colors duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-sand/10 md:p-12"
             >
-              <div className="mb-6 flex gap-1">
+              <div className="mb-10 flex gap-1.5 text-sand">
                 {Array.from({ length: r.stars }).map((_, i) => (
-                  <span key={i} className="text-sand">★</span>
+                  <span key={i} className="text-base tracking-widest">★</span>
                 ))}
               </div>
-              <p className="mb-8 flex-1 text-sm leading-relaxed text-background/80">
+              <p className="mb-12 flex-1 font-display text-lg leading-[1.6] tracking-tight text-foreground/85 md:text-xl">
                 “{r.text}”
               </p>
-              <div>
-                <p className="font-display text-lg tracking-tight text-background">
+              <div className="border-t border-charcoal/15 pt-6">
+                <p className="font-display text-xl italic tracking-tight text-foreground">
                   {r.name}
                 </p>
-                <p className="mt-1 text-[11px] tracking-[0.2em] text-background/50 uppercase">
+                <p className="mt-2 text-[10px] uppercase tracking-[0.28em] text-foreground/50">
                   {r.role}
                 </p>
               </div>
