@@ -64,7 +64,7 @@ function Home() {
 function Hero() {
   const pills = ["Paradis", "E-commerce", "Cosmetics", "Beauty"];
   return (
-    <section className="relative flex min-h-[100svh] flex-col overflow-hidden border-b border-charcoal">
+    <section className="relative isolate flex min-h-[100svh] flex-col overflow-hidden border-b border-charcoal">
       {/* Background image */}
       <div className="absolute inset-0 -z-10">
         <img
