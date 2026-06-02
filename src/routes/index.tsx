@@ -164,6 +164,23 @@ function Statement() {
           <Reveal delay={0.3} className="mt-10 max-w-md text-sm leading-relaxed text-foreground/70">
             Each formula is composed in small batches, slowly — the way couture is sewn. We work with botanical actives, mineral pigments, and a refusal to rush.
           </Reveal>
+          <Reveal delay={0.45} className="mt-10 max-w-md">
+            <div className="group relative aspect-[4/5] overflow-hidden bg-[#2a2018]" data-cursor-hover>
+              <img
+                src={earthNoir}
+                alt="Couture cosmetics composition"
+                loading="lazy"
+                className="img-hover h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+              <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
+                <p className="font-display text-sm italic text-cream">
+                  composed slowly,<br />the way couture is sewn.
+                </p>
+                <span className="text-[10px] tracking-[0.3em] text-cream/70">— ATELIER</span>
+              </div>
+            </div>
+          </Reveal>
         </div>
 
         <div className="-mr-6 md:-mr-10">
