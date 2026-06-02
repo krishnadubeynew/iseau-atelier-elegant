@@ -428,55 +428,73 @@ function Featured() {
   );
 }
 
-/* ----- Brands ----- */
-function Brands() {
-  const brands = [
-    { name: "Dior", tag: "Couture parfum & rouge", count: 124 },
-    { name: "Estée Lauder", tag: "Modern American skincare", count: 98 },
-    { name: "Clinique", tag: "Allergy-tested, dermatologist developed", count: 76 },
-    { name: "Kiehl's", tag: "Apothecary since 1851", count: 64 },
-    { name: "L'Oréal", tag: "Because you're worth it", count: 142 },
-    { name: "Lancôme", tag: "French art of beauty", count: 88 },
-    { name: "Mac Cosmetics", tag: "All ages, all races, all genders", count: 110 },
+/* ----- Reviews ----- */
+function Reviews() {
+  const reviews = [
+    {
+      name: "Elara Voss",
+      role: "Editor, Vogue Beauty",
+      stars: 5,
+      text: "The Velvet Citrus serum is unlike anything I've used before. It smells like a sunlit garden in Provence and leaves the skin impossibly luminous.",
+    },
+    {
+      name: "Sofia Chen",
+      role: "Makeup Artist",
+      stars: 5,
+      text: "I recommend L'OISEAU DÉ to every client. The formulas are refined, the pigments are rich, and the packaging feels like opening a love letter.",
+    },
+    {
+      name: "Amara Okafor",
+      role: "Wellness Blogger",
+      stars: 5,
+      text: "Finally, a brand that treats skincare as a ritual rather than a routine. The Earth Noir collection has transformed my evening wind-down.",
+    },
+    {
+      name: "Isla Montgomery",
+      role: "Creative Director",
+      stars: 5,
+      text: "Luxury without pretension. Every product feels intentional, and the results speak for themselves. My vanity has never looked better.",
+    },
   ];
+
   return (
-    <section className="border-b border-charcoal py-24 md:py-32">
+    <section className="border-b border-charcoal bg-foreground py-28 md:py-36">
       <div className="mx-auto max-w-[1600px] px-6 md:px-10">
         <div className="mb-14 flex items-end justify-between">
-          <Reveal as="h2" className="font-display text-4xl tracking-tight md:text-6xl">
-            Maisons we carry
+          <Reveal as="h2" className="font-display text-4xl tracking-tight text-background md:text-6xl">
+            What they <span className="italic text-sand">say</span>
           </Reveal>
-          <Reveal delay={0.15} className="hidden text-[11px] tracking-[0.3em] text-foreground/50 md:block">
-            04 — DIRECTORY
+          <Reveal delay={0.15} className="hidden text-[11px] tracking-[0.3em] text-background/50 md:block">
+            04 — TESTIMONIALS
           </Reveal>
         </div>
 
-        <ul>
-          {brands.map((b, idx) => (
-            <Reveal as="li" key={b.name} delay={idx * 0.04}>
-              <a
-                href="#"
-                className="group relative grid grid-cols-12 items-center gap-4 overflow-hidden border-t border-charcoal py-7 md:py-9"
-                data-cursor-hover
-              >
-                <span className="pointer-events-none absolute inset-0 -translate-x-full bg-sand transition-transform duration-700 ease-out group-hover:translate-x-0" />
-                <span className="relative col-span-7 font-display text-3xl tracking-tight transition-colors duration-500 group-hover:text-background md:col-span-5 md:text-5xl">
-                  {b.name}
-                </span>
-                <span className="relative col-span-3 hidden text-sm text-foreground/60 transition-colors duration-500 group-hover:text-background/70 md:block">
-                  {b.tag}
-                </span>
-                <span className="relative col-span-4 justify-self-end text-sm text-foreground/60 transition-colors duration-500 group-hover:text-background/70 md:col-span-3">
-                  {b.count} products
-                </span>
-                <ArrowRight
-                  className="relative col-span-1 justify-self-end text-foreground transition-all duration-500 group-hover:translate-x-1.5 group-hover:text-background"
-                  size={18}
-                />
-              </a>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {reviews.map((r, idx) => (
+            <Reveal
+              key={r.name}
+              delay={idx * 0.12}
+              className="group flex flex-col border border-background/10 bg-background/5 p-8 backdrop-blur-sm transition-colors duration-500 hover:bg-background/10"
+            >
+              <div className="mb-6 flex gap-1">
+                {Array.from({ length: r.stars }).map((_, i) => (
+                  <span key={i} className="text-sand">★</span>
+                ))}
+              </div>
+              <p className="mb-8 flex-1 text-sm leading-relaxed text-background/80">
+                “{r.text}”
+              </p>
+              <div>
+                <p className="font-display text-lg tracking-tight text-background">
+                  {r.name}
+                </p>
+                <p className="mt-1 text-[11px] tracking-[0.2em] text-background/50 uppercase">
+                  {r.role}
+                </p>
+              </div>
             </Reveal>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );
