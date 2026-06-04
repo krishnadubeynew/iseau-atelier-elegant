@@ -9,6 +9,7 @@ import { Reveal } from "@/components/Reveal";
 import heroImage from "@/assets/hero-image.jpg";
 import mosaic2 from "@/assets/mosaic-2.jpg";
 import mosaic5 from "@/assets/mosaic-5.jpg";
+import mosaic3 from "@/assets/mosaic-3.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -53,7 +54,22 @@ function AboutPage() {
         {/* Story */}
         <section className="border-b border-charcoal py-28 md:py-40">
           <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-16 px-6 md:px-10 lg:grid-cols-[1fr_1.1fr]">
-            <Reveal as="p" className="text-[11px] tracking-[0.3em] text-sand">— OUR STORY</Reveal>
+            <div className="flex flex-col gap-10">
+              <Reveal as="p" className="text-[11px] tracking-[0.3em] text-sand">— OUR STORY</Reveal>
+              <Reveal delay={0.15}>
+                <div className="aspect-[3/4] overflow-hidden bg-charcoal">
+                  <img
+                    src={mosaic3}
+                    alt="Inside the L'OISEAU DÉ atelier"
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <p className="mt-4 font-display text-xs italic text-foreground/50">
+                  The atelier, Paris — morning light.
+                </p>
+              </Reveal>
+            </div>
             <div>
               <Reveal as="h2" className="font-display text-4xl leading-[1.05] tracking-tight md:text-6xl">
                 Cosmetics composed slowly, <span className="italic text-sand">the way couture is sewn.</span>
