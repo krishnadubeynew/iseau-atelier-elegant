@@ -9,6 +9,7 @@ import { Reveal } from "@/components/Reveal";
 import heroImage from "@/assets/hero-image.jpg";
 import mosaic2 from "@/assets/mosaic-2.jpg";
 import mosaic5 from "@/assets/mosaic-5.jpg";
+import mosaic3 from "@/assets/mosaic-3.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
