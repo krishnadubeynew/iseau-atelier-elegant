@@ -57,7 +57,7 @@ function AboutPage() {
             <div className="flex flex-col gap-10">
               <Reveal as="p" className="text-[11px] tracking-[0.3em] text-sand">— OUR STORY</Reveal>
               <Reveal delay={0.15}>
-                <div className="aspect-[4/3] overflow-hidden bg-charcoal">
+                <div className="aspect-[16/10] max-h-[320px] overflow-hidden bg-charcoal">
                   <img
                     src={mosaic3}
                     alt="Inside the L'OISEAU DÉ atelier"
