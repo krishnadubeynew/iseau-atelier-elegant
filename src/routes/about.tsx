@@ -111,10 +111,10 @@ function AboutPage() {
         </section>
 
         {/* Image pair */}
-        <section className="border-b border-charcoal py-20">
+        <section className="border-b border-charcoal py-12">
           <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-4 px-6 md:grid-cols-2 md:px-10">
-            <Reveal><div className="aspect-[4/5] overflow-hidden"><img src={mosaic2} alt="" className="h-full w-full object-cover" /></div></Reveal>
-            <Reveal delay={0.15}><div className="aspect-[4/5] overflow-hidden"><img src={mosaic5} alt="" className="h-full w-full object-cover" /></div></Reveal>
+            <Reveal><div className="aspect-[16/10] max-h-[300px] overflow-hidden"><img src={mosaic2} alt="" className="h-full w-full object-cover" /></div></Reveal>
+            <Reveal delay={0.15}><div className="aspect-[16/10] max-h-[300px] overflow-hidden"><img src={mosaic5} alt="" className="h-full w-full object-cover" /></div></Reveal>
           </div>
         </section>
       </main>
