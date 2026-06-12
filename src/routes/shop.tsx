@@ -24,10 +24,14 @@ export const Route = createFileRoute("/shop")({
   head: () => ({
     meta: [
       { title: "Shop All — L'OISEAU DÉ" },
-      { name: "description", content: "Browse the full L'OISEAU DÉ catalogue of luxury cosmetics, skincare and fragrance." },
+      { name: "description", content: "Browse the full L'OISEAU DÉ catalogue of luxury fragrance, cleansers and serums. Filter by category, brand and gender." },
       { property: "og:title", content: "Shop All — L'OISEAU DÉ" },
-      { property: "og:description", content: "The full atelier collection, curated and filterable." },
+      { property: "og:description", content: "The full atelier collection — luxury fragrance, cleansers and serums, curated and filterable." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:title", content: "Shop All — L'OISEAU DÉ" },
+      { name: "twitter:description", content: "The full atelier collection — luxury fragrance, cleansers and serums." },
     ],
+    links: [{ rel: "canonical", href: "/shop" }],
   }),
   component: ShopPage,
 });
