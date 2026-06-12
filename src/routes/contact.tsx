@@ -14,14 +14,10 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact Us — L'OISEAU DÉ" },
-      { name: "description", content: "Reach the L'OISEAU DÉ studio for press, wholesale, custom commissions or personal enquiries. We answer every message within two working days." },
+      { name: "description", content: "Reach the L'OISEAU DÉ studio for press, wholesale, or personal enquiries." },
       { property: "og:title", content: "Contact Us — L'OISEAU DÉ" },
-      { property: "og:description", content: "Get in touch with the atelier — press, wholesale, or personal enquiries." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:title", content: "Contact Us — L'OISEAU DÉ" },
-      { name: "twitter:description", content: "Get in touch with the atelier — press, wholesale, or personal enquiries." },
+      { property: "og:description", content: "Get in touch with the atelier." },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
   }),
   component: ContactPage,
 });

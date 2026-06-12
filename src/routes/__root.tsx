@@ -77,21 +77,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "L'OISEAU DÉ — Modern Atelier of Cosmetics" },
-      {
-        name: "description",
-        content:
-          "Luxury skincare, cosmetics and fragrance composed slowly in small batches. A modern Parisian atelier for a deliberate beauty ritual.",
-      },
-      { name: "author", content: "L'OISEAU DÉ" },
-      { name: "theme-color", content: "#15151a" },
-      { property: "og:site_name", content: "L'OISEAU DÉ" },
+      { title: "Lovable App" },
+      { name: "description", content: "Lovable Generated Project" },
+      { name: "author", content: "Lovable" },
+      { property: "og:title", content: "Lovable App" },
+      { property: "og:description", content: "Lovable Generated Project" },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
-      { rel: "stylesheet", href: appCss },
-      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      {
+        rel: "stylesheet",
+        href: appCss,
+      },
     ],
   }),
   shellComponent: RootShell,
