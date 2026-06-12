@@ -15,10 +15,14 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About Us — L'OISEAU DÉ" },
-      { name: "description", content: "The story of L'OISEAU DÉ: a modern atelier composing cosmetics slowly, in small batches." },
+      { name: "description", content: "The story of L'OISEAU DÉ: a modern Parisian atelier composing cosmetics slowly, in small batches, with botanical actives and mineral pigments." },
       { property: "og:title", content: "About Us — L'OISEAU DÉ" },
-      { property: "og:description", content: "A modern atelier of cosmetics composed slowly." },
+      { property: "og:description", content: "A modern Parisian atelier composing cosmetics slowly, in small batches." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:title", content: "About Us — L'OISEAU DÉ" },
+      { name: "twitter:description", content: "A modern Parisian atelier composing cosmetics slowly, in small batches." },
     ],
+    links: [{ rel: "canonical", href: "/about" }],
   }),
   component: AboutPage,
 });

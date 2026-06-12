@@ -31,10 +31,14 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "L'OISEAU DÉ — Modern Atelier of Cosmetics" },
-      { name: "description", content: "Luxury skincare, cosmetics and face-health, curated for a deliberate beauty ritual." },
+      { name: "description", content: "Luxury skincare, cosmetics and fragrance, curated for a deliberate beauty ritual. Small-batch formulas from a modern Parisian atelier." },
       { property: "og:title", content: "L'OISEAU DÉ — Modern Atelier of Cosmetics" },
-      { property: "og:description", content: "Luxury skincare, cosmetics and face-health, curated for a deliberate beauty ritual." },
+      { property: "og:description", content: "Luxury skincare, cosmetics and fragrance, curated for a deliberate beauty ritual." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:title", content: "L'OISEAU DÉ — Modern Atelier of Cosmetics" },
+      { name: "twitter:description", content: "Luxury skincare, cosmetics and fragrance, curated for a deliberate beauty ritual." },
     ],
+    links: [{ rel: "canonical", href: "/" }],
   }),
   component: Home,
 });
